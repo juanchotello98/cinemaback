@@ -124,3 +124,4 @@ CORS_ORIGIN_WHITELIST = [
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
