@@ -117,15 +117,15 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-"""
 
+"""
 import dj_database_url
 from decouple import config
 
@@ -134,7 +134,7 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
-
+"""
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
