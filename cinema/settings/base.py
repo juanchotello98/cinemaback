@@ -124,6 +124,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 """
 
 import dj_database_url
@@ -134,6 +135,7 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
