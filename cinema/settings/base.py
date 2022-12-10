@@ -38,12 +38,13 @@ THIRD_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
 
 
-TOKEN_EXPIRED_AFTER_SECONDS = 60
+TOKEN_EXPIRED_AFTER_SECONDS = 300
 
 
 MIDDLEWARE = [

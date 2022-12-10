@@ -21,6 +21,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UserListSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = User
+		fields = ('id', 'name', 'username', 'email', 'password')
 
 	def to_representation(self, instance):
 		return {

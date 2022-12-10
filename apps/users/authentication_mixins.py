@@ -30,6 +30,7 @@ class Authentication(object):
 		if user is not None: 
 			return super().dispatch(request, *args, **kwargs)
 
+
 		response = Response({'error':'No han enviado las credenciales'}, status.HTTP_400_BAD_REQUEST)
 		response.accepted_renderer = JSONRenderer()
 		response.accepted_media_type = 'application/json'

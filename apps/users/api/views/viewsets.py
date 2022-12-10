@@ -6,7 +6,7 @@ from apps.users.api.serializers.serializers import UserSerializer, UserListSeria
 from apps.users.authentication_mixins import Authentication
 
 
-class UserViewSet(Authentication,viewsets.ModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
 
 	serializers = {
 		'default': UserSerializer,
@@ -26,7 +26,7 @@ class UserViewSet(Authentication,viewsets.ModelViewSet):
 	def list(self, request):
 		users = self.get_queryset()
 		user_serializer = self.get_serializer(users, many = True)
-		print(self.user)
+		#print(self.user)
 		return Response(user_serializer.data, status = status.HTTP_200_OK)
 
 

@@ -11,7 +11,7 @@ from apps.users.authentication_mixins import Authentication
 from apps.users.api.serializers.serializers import UserTokenSerializer
 
 
-class UserToken(Authentication,APIView):
+class RefreshToken(Authentication,APIView):
 
 	def get(self, *args, **kwargs):
 		print(self.user)
