@@ -5,9 +5,8 @@ from apps.users.views import Login, Logout, RefreshToken
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-
-from django.conf import settings
 from django.conf.urls.static import static
+from django.conf import settings
 
 ...
 
@@ -37,4 +36,4 @@ urlpatterns = [
     path('room/', include('apps.room.api.routers')),
     path('movie/', include('apps.movie.api.routers')),
     path('function/', include('apps.function.api.routers'))
-] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
