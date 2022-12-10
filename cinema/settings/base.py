@@ -4,6 +4,9 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -123,9 +126,20 @@ CORS_ORIGIN_WHITELIST = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+import dj_database_url
+from decouple import config
+
+DATABASES = {
+    'default': dj_database_url.config(default = config('DATABASE_URL'))
+}
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
+STATIC_URL = 'static/'
+
+os.makedirs(STATIC_TMP, exist_ok = True)
+os.makedirs(STATIC_ROOT, exist_ok = True)
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
