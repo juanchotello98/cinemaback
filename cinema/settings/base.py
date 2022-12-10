@@ -34,6 +34,7 @@ THIRD_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
@@ -121,12 +122,15 @@ CORS_ORIGIN_WHITELIST = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
 STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),)
+    os.path.join(BASE_DIR, 'static'),
+)
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
