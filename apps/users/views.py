@@ -73,9 +73,8 @@ class Logout(APIView):
 						if user.id == int(session_data.get('_auth_user_id')):
 							session.delete()
 				token.delete()
-				session_message = "Sessiones de usuario elimnadas"
 				token_message = "Token eliminado"
-				return Response({'session_message':session_message,'token_message':token_message}, status = status.HTTP_200_OK)
+				return Response({'token_message':token_message}, status = status.HTTP_200_OK)
 			return Response({'error':'No se ha encontrado un usuario con estas credenciales'},status = status.HTTP_400_BAD_REQUEST)
 
 		except:
