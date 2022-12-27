@@ -61,7 +61,7 @@ class RoomViewSet(viewsets.ModelViewSet):
 		room_in_function = Function.objects.filter(room = pk).exists()
 
 		if room_in_function:
-			return Response({'error: No puede eliminar una sala que esté asociada a una función'}, status = status.HTTP_405_METHOD_NOT_ALLOWED)
+			return Response({'error': 'No puede eliminar una sala que esté asociada a una función'}, status = status.HTTP_405_METHOD_NOT_ALLOWED)
 		elif room: 
 			room.delete()
 			return Response({'message':'Sala eliminada exitosamente'}, status = status.HTTP_204_NO_CONTENT)
