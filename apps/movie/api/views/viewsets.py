@@ -4,8 +4,10 @@ from rest_framework.response import Response
 from apps.movie.models import Movie
 from apps.function.models import Function
 from apps.movie.api.serializers.serializers import MovieSerializer
+from apps.users.authentication_mixins import Authentication
 
-class MovieViewSet(viewsets.ModelViewSet):
+
+class MovieViewSet(Authentication,viewsets.ModelViewSet):
 	serializer_class = MovieSerializer
 
 	def get_queryset(self, pk = None):

@@ -5,9 +5,11 @@ from apps.function.models import Function
 from apps.movie.models import Movie
 from apps.room.models import Room
 from apps.function.api.serializers.serializers import FunctionSerializer
+from apps.users.authentication_mixins import Authentication
 
 
-class FunctionViewSet(viewsets.ModelViewSet):
+
+class FunctionViewSet(Authentication, viewsets.ModelViewSet):
 	serializer_class = FunctionSerializer
 
 	def get_queryset(self, pk = None):

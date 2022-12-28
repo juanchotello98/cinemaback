@@ -4,9 +4,10 @@ from rest_framework.response import Response
 from apps.room.models import Room
 from apps.function.models import Function
 from apps.room.api.serializers.serializers import RoomSerializer
+from apps.users.authentication_mixins import Authentication
 
 
-class RoomViewSet(viewsets.ModelViewSet):
+class RoomViewSet(Authentication,viewsets.ModelViewSet):
 	serializer_class = RoomSerializer
 
 	def get_queryset(self, pk = None):
